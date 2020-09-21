@@ -1,0 +1,105 @@
+.pokemon-index-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 200px;
+}
+
+.pokemon-index-card {
+    align-items: center;
+    border: 2px yellow solid;
+    border-radius: 8px;
+    display: flex;
+    flex: 1 1 200px;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 200px;
+    margin: .5rem;
+    padding: 1rem;
+    position: relative;
+    transition: all 200ms ease-in-out;
+}
+
+.pokemon-index-card:hover {
+    cursor: pointer;
+    color: yellow;
+}
+
+.pokemon-index-card_img {
+    height: 100px;
+    width: 100px;
+}
+
+.pokemon-index-card_name {
+    font-weight: bold;
+}
+
+.pokemon-index-card_num {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+}
+
+.pokemon-index-card_type,
+.pokemon-index-card_weakness {
+    font-size: .8rem;
+    margin: .2rem 0;
+}
+
+
+/*POKEMON COLORS BASED ON TYPE*/
+.bug {
+    background-color: #a8b821;
+}
+.dark {
+    background-color: #6f5848;
+}
+.dragon {
+    background-color: #7139fa;
+}
+.electric { 
+    background-color: #f8d030
+}
+.fairy {
+    background-color: #ff9be1;
+}
+.fighting { 
+    background-color: #c22f28;
+}
+.fire {
+    background-color: #f07f2f;
+}
+.flying {
+    background-color: #a890f0;
+}
+.ghost {
+    background-color: #6e5899;
+}
+.grass {
+    background-color: #78c84f;
+}
+.ground {
+    background-color: #e0c069;
+}
+.ke {
+    background-color: #98d8d8;
+}
+.normal {
+    background-color: #a9a878;
+}
+.phsycic {
+    background-color: #f85888;
+}
+.poison {
+    background-color: #a040a1;
+}
+.rock {
+    background-color: #b6a138;
+}
+.steel {
+    background-color: #b8b8d0;
+}
+.water { 
+    background-color: #6890f0;
+}
