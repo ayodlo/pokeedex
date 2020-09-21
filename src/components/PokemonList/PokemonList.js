@@ -1,14 +1,20 @@
-import axios from 'axios';
+//Dependencies
 import _ from 'lodash';
+import axios from 'axios';
 import React from 'react';
 import './PokemonList.css'
+
+//Components
+import DetailsPage from './DetailsPage/DetailsPage';
 
 class PokemonList extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            pokemon: []
+            pokemon: [],
+            showPokemonDetails: false,
+            currentPokemon: null
         }
     }
 
@@ -23,7 +29,6 @@ class PokemonList extends React.Component {
     }
 
     render() {
-
         // variables
         let pokemonMapped = [];
         const pokemonFiltered = this.state.pokemon
@@ -54,8 +59,8 @@ class PokemonList extends React.Component {
         pokemonMapped = pokemonFiltered
         .map((pokemon) => {
                 return (
-                    <div className={'pokemon-index-card ' + pokemon.type[0].toLowerCase()} key={pokemon.id}>
-                        <img className='pokemon-index-card_img' src={pokemon.img} />
+                    <div className={'pokemon-index-card ' + pokemon.type[0].toLowerCase()} key={pokemon.id} onClick={() => renderPokemonDetails(pokemon)}>
+                        <img alt={pokemon.name + ' image'} className='pokemon-index-card_img' src={pokemon.img} />
                         <span className='pokemon-index-card_name'>{pokemon.name} </span>
                         <span className='pokemon-index-card_type'><b>Type:</b> {pokemon.type.join(' / ')}</span>
                         <span className='pokemon-index-card_weakness'><b>Weakness:</b> {pokemon.weaknesses.join(' / ')}</span>
@@ -63,13 +68,46 @@ class PokemonList extends React.Component {
                     </div>
                 )
             })
+        
+        // load details page for specific pokemon
+        const renderPokemonDetails = (pokemon) => {
+            this.setState((state) => {
+                return { 
+                    showPokemonDetails: true,
+                    currentPokemon: pokemon
+                }
+            })
+        };
+
+        // close details page
+        const closePokemonDetails = () => {
+            this.setState((state) => {
+                return { 
+                    showPokemonDetails: false
+                }
+            })
+        };
 
         // render JSX
-        return (
-            <div className='pokemon-index-container'>
-                { pokemonMapped ? pokemonMapped : 'Loading...'}
-            </div>
-        )
+        if(this.state.showPokemonDetails) {
+            return (
+                <div className='details-page-container'>
+                    <DetailsPage 
+                    currentPokemon={ this.state.currentPokemon } 
+                    closePokemonDetails={() => closePokemonDetails()} 
+                    renderPokemonDetails={() => renderPokemonDetails()} 
+                    pokemonFiltered={this.state.pokemon}
+                    />
+                </div>
+            )
+        } else {
+            return (
+                <div className='pokemon-index-container'>
+                    { pokemonMapped }
+                </div>
+            )
+        }
+
     }
 }
 

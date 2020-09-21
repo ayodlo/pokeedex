@@ -47,6 +47,9 @@
     margin: .2rem 0;
 }
 
+.image {
+    margin-bottom: .5rem;
+}
 
 /*POKEMON COLORS BASED ON TYPE*/
 .bug {
@@ -102,4 +105,8 @@
 }
 .water { 
     background-color: #6890f0;
+}
+
+.details-page-container {
+    position: relative;
 }
