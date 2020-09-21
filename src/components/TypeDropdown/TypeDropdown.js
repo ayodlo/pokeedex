@@ -10,22 +10,19 @@ class TypeDropdown extends React.Component {
 
     types = [
         'Bug',
-        'Dark',
         'Dragon',
         'Electric',
-        'Fairy',
         'Fighting',
         'Fire',
         'Flying',
         'Ghost',
         'Grass',
         'Ground',
-        'Ke',
+        'Ice',
         'Normal',
-        'Psychic',
         'Poison',
+        'Psychic',
         'Rock',
-        'Steel',
         'Water'
     ]
 

@@ -10,22 +10,19 @@ class WeaknessDropdown extends React.Component {
 
     weaknesses = [
         'Bug',
-        'Dark',
         'Dragon',
         'Electric',
-        'Fairy',
         'Fighting',
         'Fire',
         'Flying',
         'Ghost',
         'Grass',
         'Ground',
-        'Ke',
+        'Ice',
         'Normal',
-        'Psychic',
         'Poison',
+        'Psychic',
         'Rock',
-        'Steel',
         'Water'
     ]
 
