@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Pokeedex</h1>
-        <input className='search-bar' onChange={(e) => this.searchPokemon(e.target.value)} value={this.state.searchInput} placeholder='Search...'/>
+        <input className='search-bar' onChange={(e) => this.searchPokemon(e.target.value)} value={this.state.searchInput} placeholder='Search...' id='filter_searchbox'/>
         <TypeDropdown selectTypes={this.selectTypes} />
         <WeaknessDropdown selectWeaknesses={this.selectWeaknesses} />
         <PokemonList 

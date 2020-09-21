@@ -47,6 +47,7 @@ class WeaknessDropdown extends React.Component {
                 displayValue="types" // Property name to display in the dropdown options
                 isObject={false}
                 placeholder='By Weakness'
+                id='filter_type_dropdown'
             />
         )
     }

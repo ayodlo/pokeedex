@@ -10,7 +10,7 @@
     min-width: 200px;
     background: red;
     padding: 3rem 0;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .details-page-card {
